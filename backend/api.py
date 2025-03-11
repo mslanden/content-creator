@@ -24,7 +24,7 @@ app = FastAPI(title="Agentica AI API")
 app.add_middleware(
     CORSMiddleware,
     allow_origins=[
-        "https://content-creator-coral.vercel.app",  # Production Vercel domain
+        "https://content-creator-khaki.vercel.app",  # Production Vercel domain
         "http://localhost:3000",                     # Local development
         "https://localhost:3000"                     # Local development with HTTPS
     ],
