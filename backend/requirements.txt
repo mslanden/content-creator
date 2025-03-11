@@ -1,0 +1,18 @@
+# Backend dependencies
+fastapi>=0.95.0
+uvicorn>=0.22.0
+langchain>=0.0.267
+langchain-core>=0.1.0
+langgraph>=0.0.10
+langchain-openai>=0.0.1
+beautifulsoup4>=4.12.2
+requests>=2.31.0
+python-dotenv>=1.0.0
+pydantic>=2.0.0
+starlette>=0.27.0
+
+# CORS support
+fastapi-cors>=0.0.5
+
+# Optional: Production deployment
+# gunicorn>=21.2.0
