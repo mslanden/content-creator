@@ -26,7 +26,7 @@ app.add_middleware(
     allow_origins=[
         "https://content-creator-khaki.vercel.app",              # Production Vercel domain
         "https://content-creator-coral.vercel.app",              # User's Vercel production domain
-        "https://content-creator-p56uuzlht-marcelino-landens-projects.vercel.app", # User's Vercel preview domain
+        "https://content-creator-pe4xoqcwb-marcelino-landens-projects.vercel.app",
         "http://localhost:3000",                                 # Local development
         "https://localhost:3000"                                 # Local development with HTTPS
     ],
