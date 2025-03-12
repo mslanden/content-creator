@@ -1,5 +1,12 @@
 'use client';
 
+// Add TypeScript declaration for process.env in client components
+declare const process: {
+  env: {
+    NEXT_PUBLIC_API_URL?: string;
+  }
+};
+
 import { createContext, useState, useContext, useEffect, ReactNode } from 'react';
 import {
   createSession,
@@ -191,11 +198,12 @@ export const AgentProvider = ({ children }: AgentProviderProps) => {
 
     try {
       // Direct API call
-      console.log(`Making direct API call to http://localhost:8000/chat with session ID: ${sessionId}`);
+      const apiBaseUrl = process.env.NEXT_PUBLIC_API_URL || 'http://localhost:8000';
+      console.log(`Making direct API call to ${apiBaseUrl}/chat with session ID: ${sessionId}`);
       console.log('Request body:', JSON.stringify({ session_id: sessionId, message }));
       
       // Use the browser's native fetch
-      const directResponse = await window.fetch('http://localhost:8000/chat', {
+      const directResponse = await window.fetch(`${apiBaseUrl}/chat`, {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',

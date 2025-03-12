@@ -137,7 +137,16 @@ export default function Home() {
         // Test direct API connection
         console.log("Testing direct API connection");
         const apiBaseUrl = process.env.NEXT_PUBLIC_API_URL || 'http://localhost:8000';
-        const response = await fetch(apiBaseUrl);
+        console.log("API base URL:", apiBaseUrl);
+        
+        const response = await fetch(`${apiBaseUrl}`, {
+          method: 'GET',
+          credentials: 'include',
+          headers: {
+            'Content-Type': 'application/json',
+          },
+        });
+        
         console.log("Direct API test response status:", response.status);
         const data = await response.json();
         console.log("Direct API test response data:", data);
