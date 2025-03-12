@@ -1,5 +1,12 @@
 "use client";
 
+// Add TypeScript declaration for process.env in client components
+declare const process: {
+  env: {
+    NEXT_PUBLIC_API_URL?: string;
+  }
+};
+
 import { useState, useRef, useEffect } from "react";
 import ChatMessage from "../components/ChatMessage";
 import Sidebar from "../components/Sidebar";
@@ -129,7 +136,8 @@ export default function Home() {
       try {
         // Test direct API connection
         console.log("Testing direct API connection");
-        const response = await fetch('http://localhost:8000');
+        const apiBaseUrl = process.env.NEXT_PUBLIC_API_URL || 'http://localhost:8000';
+        const response = await fetch(apiBaseUrl);
         console.log("Direct API test response status:", response.status);
         const data = await response.json();
         console.log("Direct API test response data:", data);
