@@ -24,12 +24,14 @@ app = FastAPI(title="Agentica AI API")
 app.add_middleware(
     CORSMiddleware,
     allow_origins=[
-        "https://content-creator-khaki.vercel.app",  # Production Vercel domain
-        "http://localhost:3000",                     # Local development
-        "https://localhost:3000"                     # Local development with HTTPS
+        "https://content-creator-khaki.vercel.app",              # Production Vercel domain
+        "https://content-creator-coral.vercel.app",              # User's Vercel production domain
+        "https://content-creator-p56uuzlht-marcelino-landens-projects.vercel.app", # User's Vercel preview domain
+        "http://localhost:3000",                                 # Local development
+        "https://localhost:3000"                                 # Local development with HTTPS
     ],
     allow_credentials=True,
-    allow_methods=["GET", "POST", "PUT", "DELETE"],
+    allow_methods=["GET", "POST", "PUT", "DELETE", "OPTIONS"],
     allow_headers=["*"],
 )
 print("CORS middleware configured for specific domains")
