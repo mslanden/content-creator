@@ -136,7 +136,7 @@ export default function Home() {
       try {
         // Test direct API connection
         console.log("Testing direct API connection");
-        const apiBaseUrl = process.env.NEXT_PUBLIC_API_URL || 'http://localhost:8000';
+        const apiBaseUrl = process.env.NEXT_PUBLIC_API_URL;
         console.log("API base URL:", apiBaseUrl);
         
         const response = await fetch(`${apiBaseUrl}`, {
@@ -225,7 +225,7 @@ export default function Home() {
         
         // Create session with current settings
         // Use the API_BASE_URL from environment in production
-        const apiBaseUrl = process.env.NEXT_PUBLIC_API_URL || 'http://localhost:8000';
+        const apiBaseUrl = process.env.NEXT_PUBLIC_API_URL;
         const sessionResponse = await fetch(`${apiBaseUrl}/sessions`, {
           method: 'POST',
           headers: {
@@ -261,7 +261,7 @@ export default function Home() {
       // Send the message
       console.log(`Sending message with session ID: ${sessionId}`);
       // Use the API_BASE_URL from environment in production
-      const apiBaseUrl = process.env.NEXT_PUBLIC_API_URL || 'http://localhost:8000';
+      const apiBaseUrl = process.env.NEXT_PUBLIC_API_URL;
       const chatResponse = await fetch(`${apiBaseUrl}/chat`, {
         method: 'POST',
         headers: {

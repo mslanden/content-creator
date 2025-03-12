@@ -198,7 +198,7 @@ export const AgentProvider = ({ children }: AgentProviderProps) => {
 
     try {
       // Direct API call
-      const apiBaseUrl = process.env.NEXT_PUBLIC_API_URL || 'http://localhost:8000';
+      const apiBaseUrl = process.env.NEXT_PUBLIC_API_URL;
       console.log(`Making direct API call to ${apiBaseUrl}/chat with session ID: ${sessionId}`);
       console.log('Request body:', JSON.stringify({ session_id: sessionId, message }));
       
